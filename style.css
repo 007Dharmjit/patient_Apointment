@@ -1,0 +1,131 @@
+body{
+background-color: rgb(33, 31, 31);
+color: #fff;
+}
+
+.container{
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.Apointment_form{
+    background-color: #5b5757;
+    font-weight: 400;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.Apointment_form label{
+    font-size: 18px;
+    color: #fff;
+}
+.box{
+    /* background-color: aliceblue; */
+    width: 400px;
+    height: 483px;
+    padding: 20px;
+    /* border: 2px solid black; */
+    color: black;
+    border-radius: 50px;
+    background: #5b5757;
+    box-shadow:  20px 20px 60px #4d4a4a, -20px -20px 60px #696464;
+}
+.Apointment_form input{
+    background-color: transparent;
+    height: 20px;
+    border: none;
+    color:#fff ;
+    outline: none;
+    background: #5b5757;
+}
+.Apointment_form select{
+    background: #5b5757;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color:#fff ;
+}
+.bg{
+    border-bottom: 1px solid#fff;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.head h2{
+    font-size: 35px;
+}
+.h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.h2 p{
+    font-size: 8vh;
+    font-weight: 800;
+    background: transparent;
+}
+.menu{
+    display: flex;
+    justify-content: right;
+}
+.menu a{
+    text-decoration: none;
+    padding-left: 10px;
+    font-size: 19px;
+    color: white;
+    cursor: pointer;
+    transition: all linear 1s;
+}
+.menu a:hover{
+    color: red;
+}
+.textbox{
+    border-radius: 50px;
+    background: #5b5757;
+    box-shadow:  20px 20px 60px #4d4a4a, -20px -20px 60px #696464;
+ height: 150px;
+width: 150px;
+}
+
+/* for button */
+
+.bt{
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #1C1A1C;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+  }
+   
+  .text {
+    font-weight: 600;
+    color: #AAAAAA;
+    font-size: medium;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(0deg,#A47CF3,#683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+  }
+  
+  .btn:hover .text {
+    color: white;
+  }
+  

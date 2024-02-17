@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="head">
+          <h2>Card</h2>
+        </div>
+        <form action="Apointment_form" class="Apointment_form">
+          <!-- For Name    -->
+          <div class="bg">
+          <label for="">Enter your Name</label><br />
+          <input type="text" required />
+        </div>
+        <br /><br />
+        
+        <!-- for email -->
+        
+        <div class="bg">
+
+          <label for="">Enter Email</label><br />
+          <input type="email" required />
+        </div>
+        <br /><br />
+
+          <!-- phone number -->
+        
+          <div class="bg">
+
+          <label for="">Enter Phone.No</label><br />
+          <input type="text" id="phone" name="phone" required />
+        </div>
+        <br /><br />
+
+        <!-- For Select a desis  -->
+
+          <label for="">Disease:</label>
+          <select onchange="select()" id="desis" required>
+            <option value="">--select--</option>
+            <option value="fever">Fever</option>
+            <option value="diebytis">Diebytis</option>
+            <option value="canser">Canser</option>
+            <option value="other">Other</option></select
+          ><br /><br />
+
+          <!-- Button -->
+          
+          <div class="bt">
+            <button class="btn">
+              <span class="text">Submit</span>
+            </button>
+          </div>
+        </form>
+      </di>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
