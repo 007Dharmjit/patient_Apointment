@@ -1,0 +1,68 @@
+.h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.h2 p{
+    font-size: 8vh;
+    font-weight: 800;
+    background: transparent;
+}
+        /* Style for the search container */
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+        
+        /* Style for the search input */
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #dde1e7;
+            border-radius: 25px;
+        }
+        
+        /* Style for the suggestion box */
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: fit-content;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        /* Style for individual suggestion items */
+        .suggestions-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .suggestions-item:hover {
+            background-color: #e0e0e0;
+        }
+        .button {
+            margin: 15px 0;
+            width: 100%;
+            height: 50px;
+            font-size: 18px;
+            line-height: 50px;
+            font-weight: 600;
+            background: #dde1e7;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #595959;
+            box-shadow: 2px 2px 5px #BABECC,
+                       -5px -5px 10px #ffffff73;
+          }
+          
+          .button:focus {
+            color: #3498db;
+            box-shadow: inset 2px 2px 5px #BABECC,
+                       inset -5px -5px 10px #ffffff73;
+          }

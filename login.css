@@ -1,10 +1,13 @@
-body{
+ body{
 background-color: #e8e8e8;
+padding-top: 40px;
+} 
+
+.center{
 display: flex;
 justify-content: center;
 padding-top: 40px;
 }
-
 
 .content {
     width: 330px;
