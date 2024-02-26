@@ -1,5 +1,5 @@
 body{
-background-color: rgb(33, 31, 31);
+background-color: #A53A27;
 color: #fff;
 }
 
@@ -66,12 +66,15 @@ color: #fff;
     font-size: 8vh;
     font-weight: 800;
     background: transparent;
+    font-family: "Caudex", serif;
 }
+
 .menu{
     display: flex;
     justify-content: right;
 }
 .menu a{
+    font-family: "Caudex", serif;
     text-decoration: none;
     padding-left: 10px;
     font-size: 19px;
@@ -80,18 +83,22 @@ color: #fff;
     transition: all linear 1s;
 }
 .menu a:hover{
-    color: red;
+    color: rgb(16, 15, 15);
 }
-.textbox{
-    border-radius: 50px;
-    background: #5b5757;
-    box-shadow:  20px 20px 60px #4d4a4a, -20px -20px 60px #696464;
- height: 150px;
-width: 150px;
-}
-
+.BTN{
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+    font-size: 19px;
+    color: white;
+    cursor: pointer;
+    font-family: "Caudex", serif;
+    transition: all linear 1s;
+  }
+  .BTN:hover{
+    color: rgb(16, 15, 15);
+  }
 /* for button */
-
 .bt{
     display: flex;
     justify-content: center;
@@ -128,4 +135,4 @@ width: 150px;
   .btn:hover .text {
     color: white;
   }
-  
+

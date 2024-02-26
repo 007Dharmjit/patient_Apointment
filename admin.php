@@ -4,16 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "admin";
 
+    // Establishing a database connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Checking connection
+    if ($conn->connect_error) {
+        die("Database connection failed: " . $conn->connect_error);
+    }
+
+    // Checking if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieving phone and password from the form
+        $phone = $_POST['phone'];
+        $password = $_POST['password'];
+
+        // Sanitizing input to prevent SQL injection
+        $phone = $conn->real_escape_string($phone);
+        $password = $conn->real_escape_string($password);
+
+        // Querying the database to fetch user_info based on phone
+        $query = "SELECT * FROM admin_info WHERE phone = '$phone';";
+        $result = $conn->query($query);
+
+        if ($result) {
+            // Checking if user with given phone exists
+            if ($result->num_rows > 0) {
+                // User found, check password
+                $row = $result->fetch_assoc();
+                if ($password == $row['password']) {
+                    // Passwords match, authentication successful
+                    echo "<script>alert('Login successfully!');</script>";
+                    echo "<script>window.location.href = 'hospital_data.php';</script>";
+                    exit;
+                } else {
+                    // Passwords don't match
+                    $error = "Password was incorrect!";
+                }
+            } else {
+                // User with given phone not found
+                $error = "Phone number not found!";
+            }
+        } else {
+            // Error in SQL query
+            echo "<p>Error: " . $conn->error . "</p>";
+        }
+
+        // Freeing result set
+        $result->free();
+    }
+
+    // Closing connection
+    $conn->close();
+    ?>
+<div class="center">
     <div class="content">
         <div class="text">
             Login Admin
         </div>
-        <form >
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
             <div class="field">
                 <input required="" type="text" name="phone" class="input" id="phone" >
                 <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -39,17 +97,6 @@
             <button class="button" type="submit" >Login</button>
         </form>
     </div>
-<script>
-   const form = document.querySelector('form');
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-  const phone = document.getElementById('phone').value;
-  const password = document.getElementById("password").value;
-  if (phone == '9998947508' && password == 'admin@999') {
-    window.location.href = 'hospital_data.php';
-  }
-});
-</script>
+</div>
 </body>
-
 </html>

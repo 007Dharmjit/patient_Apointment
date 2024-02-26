@@ -73,7 +73,7 @@ $conn->close();
     top: 100%;
     left: 0;
     width: fit-content;
-    background-color: #f9f9f9;
+    background-color: #dde1e7;
     border: 1px solid #ddd;
     border-radius: 5px;
     display: none;
@@ -86,7 +86,7 @@ $conn->close();
 }
 
 .suggestions-item:hover {
-    background-color: #e0e0e0;
+    background-color: #D2D5DD;
 }
     </style>
 </head>
@@ -118,8 +118,12 @@ $conn->close();
                     <br>
                 <label class="label">Address</label>
             </div><br>
-          
+               
             <button class="button" type="submit" >Insert</button>
+            <div class="sign-up">
+                Create Admin account?
+                <a href="Admin_Register.php">Create now</a>
+            </div>
         </form>
     </div>
     </div>

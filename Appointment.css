@@ -66,3 +66,27 @@
             box-shadow: inset 2px 2px 5px #BABECC,
                        inset -5px -5px 10px #ffffff73;
           }
+          .card {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* Three columns */
+            grid-auto-rows: 100px;
+            /* Adjust height as needed */
+            gap: 30px;
+            /* Add gap between boxes */
+            width: fit-content;
+        }
+
+        .hospital {
+            border-radius: 10px;
+            background: #e0e0e0;
+            box-shadow: 20px 20px 40px #bebebe,
+                -20px -20px 40px #ffffff;
+            width: fit-content;
+            height: fit-content;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }

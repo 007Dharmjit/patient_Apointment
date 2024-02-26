@@ -11,6 +11,7 @@
 
 
 <?php
+session_start();
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -44,7 +45,9 @@
                 // User found, check password
                 $row = $result->fetch_assoc();
                 if ($password == $row['password']) {
+
                     // Passwords match, authentication successful
+                    $_SESSION['logged_phone'] = $phone;
                     echo "<script>alert('Login successfully!');</script>";
                     echo "<script>window.location.href = 'Home.php';</script>";
                     exit;
