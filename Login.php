@@ -7,11 +7,12 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
 
-<?php
-session_start();
+    <?php
+    session_start();
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -48,6 +49,7 @@ session_start();
 
                     // Passwords match, authentication successful
                     $_SESSION['logged_phone'] = $phone;
+
                     echo "<script>alert('Login successfully!');</script>";
                     echo "<script>window.location.href = 'Home.php';</script>";
                     exit;
@@ -72,53 +74,71 @@ session_start();
     $conn->close();
     ?>
 
-<div class="center">
-    <div class="content">
-        <div class="text">
-            Login
-        </div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="field">
-                <input required="" type="text" name="phone" class="input">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path>
-                        </g>
-                    </svg></span>
-                <label class="label">Enter Phone.No</label>
+    <div class="center">
+        <div class="content">
+            <div class="text">
+                Login
             </div>
-            <div class="field">
-                <input required="" type="password" name="password" class="input">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <path class="" data-original="#000000" fill="#595959" d="M336 192h-16v-64C320 57.406 262.594 0 192 0S64 57.406 64 128v64H48c-26.453 0-48 21.523-48 48v224c0 26.477 21.547 48 48 48h288c26.453 0 48-21.523 48-48V240c0-26.477-21.547-48-48-48zm-229.332-64c0-47.063 38.27-85.332 85.332-85.332s85.332 38.27 85.332 85.332v64H106.668zm0 0"></path>
-                        </g>
-                    </svg></span>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="field">
+                    <input required="" type="text" name="phone" class="input">
+                    <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path>
+                            </g>
+                        </svg></span>
+                    <label class="label">Enter Phone.No</label>
+                </div>
+                <div class="field">
+                    <input required="" type="password" name="password" id="password-input" class="input">
+                    <span class="span" id="password-toggle">
+                        <svg class="open" width="50" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10C4 10 5.6 15 12 15M12 15C18.4 15 20 10 20 10M12 15V18M18 17L16 14.5M6 17L8 14.5" stroke="#464455" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
                     <br>
-                <label class="label">Password</label>
-            </div><br>
-            <div class="forgot-pass">
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button class="button" type="submit" >Login</button>
-            <div class="sign-up">
-                Don't have an account?
-                <a href="Register.php">Register now</a>
-            </div>
-        </form>
-        <?php if (!empty($error)): ?>
+                    <label class="label">Password</label>
+                </div>
+
                 <br>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php endif; ?>
-    <?php if (!empty($err)): ?>
+                <div class="forgot-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button class="button" type="submit">Login</button>
+                <div class="sign-up">
+                    Don't have an account?
+                    <a href="Register.php">Register now</a>
+                </div>
+            </form>
+            <?php if (!empty($error)) : ?>
                 <br>
-        <p style="color: red;"><?php echo $err; ?></p>
-    <?php endif; ?>
+                <p style="color: red;"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <?php if (!empty($err)) : ?>
+                <br>
+                <p style="color: red;"><?php echo $err; ?></p>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
+    <script>
+        const passwordInput = document.getElementById("password-input");
+        const passwordToggle = document.getElementById("password-toggle");
+
+        passwordToggle.addEventListener("click", function(event) {
+            event.stopPropagation();
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.innerHTML = `<span class="span" id="password-toggle"><svg width="50" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 12C4 12 5.6 7 12 7M12 7C18.4 7 20 12 20 12M12 7V4M18 5L16 7.5M6 5L8 7.5M15 13C15 14.6569 13.6569 16 12 16C10.3431 16 9 14.6569 9 13C9 11.3431 10.3431 10 12 10C13.6569 10 15 11.3431 15 13Z" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> </span>`;
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.innerHTML = `<span class="span" id="password-toggle"><svg id="password-toggle" class="open" width="50" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 10C4 10 5.6 15 12 15M12 15C18.4 15 20 10 20 10M12 15V18M18 17L16 14.5M6 17L8 14.5" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>`;
+            }
+        });
+    </script>
 </body>
 
 </html>
-<script>
-   
-</script>

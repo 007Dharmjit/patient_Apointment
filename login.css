@@ -127,3 +127,6 @@ padding-top: 40px;
   .sign-up a:hover {
     text-decoration: underline;
   }
+  .open{
+    cursor: pointer;
+  }
